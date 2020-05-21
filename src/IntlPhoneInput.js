@@ -123,6 +123,7 @@ export default class IntlPhoneInput extends React.Component {
     const { flag } = this.state;
     const {
       containerStyle,
+      openDialogView,
       flagStyle,
       phoneInputStyle,
       dialCodeTextStyle,
@@ -142,7 +143,7 @@ export default class IntlPhoneInput extends React.Component {
     return (
         <View style={{ ...styles.container, ...containerStyle }}>
           <TouchableOpacity onPress={this.setDefaultCountries}>
-            <View style={styles.openDialogView}>
+            <View style={[styles.openDialogView, openDialogView]}>
               <Text style={[styles.flagStyle, flagStyle]}>{flag}</Text>
               <Text style={[styles.dialCodeTextStyle, dialCodeTextStyle]}>{this.state.dialCode}</Text>
             </View>
@@ -200,6 +201,7 @@ IntlPhoneInput.propTypes = {
   containerStyle: PropTypes.object, // {}
   dialCodeTextStyle: PropTypes.object, // {}
   flagStyle: PropTypes.object, // {}
+  openDialogView: PropTypes.object, // {}
   modalContainer: PropTypes.object, // {}
   filterInputStyle: PropTypes.object, // {}
   closeButtonStyle: PropTypes.object, // {}
