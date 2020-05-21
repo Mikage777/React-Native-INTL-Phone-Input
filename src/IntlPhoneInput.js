@@ -22,7 +22,7 @@ export default class IntlPhoneInput extends React.Component {
   constructor(props) {
     super(props);
     const defaultCountry =
-        data.filter((obj) => obj.code === props.defaultCountry)[0] || data.filter((obj) => obj.code === "TR")[0];
+        data.filter((obj) =>  props.phoneNumber.includes(obj.dialCode))[0] || data.filter((obj) => obj.code === props.defaultCountry)[0];
     const defaultPhoneNumber =
       props.phoneNumber
         ? props.phoneNumber.includes('+')
@@ -39,8 +39,12 @@ export default class IntlPhoneInput extends React.Component {
       countryData: data
     };
     if (defaultPhoneNumber) {
-      this.handleChangeText(defaultPhoneNumber)
+      this.onChangeText(defaultPhoneNumber)
     }
+  }
+  
+  componentDidMount() {
+    this.onChangeText(this.state.phoneNumber)
   }
 
   onChangePropText=(unmaskedPhoneNumber, phoneNumber) => {
