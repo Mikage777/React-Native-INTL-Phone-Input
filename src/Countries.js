@@ -1222,7 +1222,7 @@ const Countries = [
     flag: '🇷🇺',
     code: 'RU',
     dialCode: '+7',
-    mask: '9 (999) 999-99-99'
+    mask: '(999) 999-99-99'
   },
   {
     name: 'Rwanda',
