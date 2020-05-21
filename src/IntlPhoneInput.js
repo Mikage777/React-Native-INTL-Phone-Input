@@ -207,7 +207,7 @@ IntlPhoneInput.propTypes = {
   filterText: PropTypes.string,
   closeText: PropTypes.string,
   searchIconStyle: PropTypes.object,
-  disableCountryChange:PropTypes.func
+  disableCountryChange:PropTypes.bool
 };
 
 const styles = StyleSheet.create({
