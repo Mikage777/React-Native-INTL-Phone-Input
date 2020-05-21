@@ -38,9 +38,6 @@ export default class IntlPhoneInput extends React.Component {
       mask: defaultCountry.mask,
       countryData: data
     };
-    if (defaultPhoneNumber) {
-      this.onChangeText(defaultPhoneNumber)
-    }
   }
   
   componentDidMount() {
